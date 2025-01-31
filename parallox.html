@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax with Responsive Grid & Scroll-to-Top</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            text-align: center;
+            background: linear-gradient(to right, #eef2f3, #8e9eab);
+            color: #333;
+        }
+
+        /* Parallax Section */
+        .parallax {
+            height: 400px;
+            background: url('https://source.unsplash.com/1600x900/?nature,mountain') no-repeat center;
+            background-size: cover;
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            font-weight: bold;
+            color: white;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+            background-blend-mode: overlay;
+        }
+
+        /* Content Section */
+        .content {
+            padding: 40px;
+            background: white;
+            font-size: 1.2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+        }
+
+        /* Responsive Card Grid */
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 40px;
+        }
+
+        .card {
+            background: linear-gradient(135deg, #007bff, #00c6ff);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            color: white;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .card h3 {
+            margin-top: 10px;
+            font-size: 1.2rem;
+        }
+
+        .spacer {
+            height: 200px;
+        }
+
+        /* Scroll to Top Button */
+        #scrollTopBtn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none;
+            background: linear-gradient(135deg, Silver, black);
+            color: white;
+            border: none;
+            padding: 12px 18px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+            transition: opacity 0.3s, transform 0.3s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        #scrollTopBtn:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Parallax Section -->
+    <div class="parallax">Parallax Scrolling Effect</div>
+
+    <div class="content">
+        <h2>Welcome to the Blink Auto </h2>
+        <p>.</p>
+    </div>
+
+    <!-- Responsive Card Grid -->
+    <div class="card-container">
+        <div class="card">
+            <img src="C:\Users\Admin\Desktop\General\Numtery task\Images\images.jpeg">
+            <h3>OIL Supply </h3>
+        </div>
+        <div class="card">
+            <img src="C:\Users\Admin\Desktop\General\Numtery task\Images\download.jpeg">
+            <h3>Technology</h3>
+        </div>
+        <div class="card">
+            <img src="C:\Users\Admin\Desktop\General\Numtery task\Images\searching-location-on-map-and-pin-above-osaka-city-and-network-connection-JRBWPP.jpg">
+            <h3>City </h3>
+        </div>
+        <div class="card">
+            <img src="C:\Users\Admin\Desktop\General\Numtery task\Images\download (1).jpeg">
+            <h3>Vehile brands</h3>
+        </div>
+    </div>
+
+    <div class="parallax">Next Parallax Section</div>
+
+    <div class="content">
+        <h2>Our service Design</h2>
+        <p>Blink Auto's service design ensures seamless vehicle maintenance with quick diagnostics, efficient repair workflows, and a customer-centric approach. Our streamlined process minimizes wait times while maximizing service quality..</p>
+    </div>
+
+    <div class="spacer"></div>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollTopBtn" onclick="scrollToTop()">&#8679;</button>
+
+    <script>
+        // Show/hide scroll-to-top button
+        window.onscroll = function () {
+            let btn = document.getElementById("scrollTopBtn");
+            if (document.documentElement.scrollTop > 100) {
+                btn.style.display = "block";
+            } else {
+                btn.style.display = "none";
+            }
+        };
+
+        // Smooth Scroll to Top
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+
+</body>
+</html>
